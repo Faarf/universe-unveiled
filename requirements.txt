@@ -1,5 +1,4 @@
 Django==5.0.7
 gunicorn==26.0.0
 python-dotenv
-json
 requests
