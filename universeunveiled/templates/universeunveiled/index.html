@@ -1,0 +1,295 @@
+{% extends "universeunveiled/layout.html" %}
+
+{% load static %}
+
+
+{% block title %}
+    Universe Unveiled
+{% endblock %}
+
+{% block picture %} 
+
+<img class="pic img-fluid" src="{% static 'universeunveiled/jwstsombrero.png' %}" alt="sombrero galaxy">
+<div class="overlay">
+<br>
+<div class="text">
+    <h1 class="display-1">The Universe Unveiled</h1>
+    <h4 class="display-4">Making understanding universal</h4>
+</div>
+    <p style="text-align: right;">Sombrero Galaxy in Infrared, Credits: NASA, ESA, CSA, STScI</p>
+</div>
+
+{% endblock %}
+
+
+{% block main %}
+<h1>
+    Explore the Universe
+</h1>
+<hr>
+<h5>
+    Here you can find a evergrowing archive of posts about the universe in a range of different topics. <br><br>
+    There are three type of posts:<br><br>
+    <ul>
+        <li>Unveiling</li>
+        <br>
+        <li>Discovery Of</li>
+        <br>
+        <li>Everyday Science</li>
+    </ul>
+</h5><br>
+ 
+    <h1 class="center title-type">Unveiling</h1>
+    <h5 class="center"> <em>Posts that explains complicated subjects in simple ways.</em></h5>
+    <br><br>
+        <h2 class="center ">From Stars to Black Holes:</h5>
+
+        
+        <div class="deck">
+       
+            <div class="card mx-auto">
+                 <a href="{% url 'post_view' post_id=18201037921203604 %}" class="card-link">
+                <img src="{% static 'universeunveiled/stars.png' %}" class="card-img-top" alt="picture of stars">
+                <div class="card-body">
+                    <p class="card-text">How stars work and what they are made of.</p>
+                </div> 
+             </a>
+            </div>
+      
+        
+        
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=18342262033000192 %}" class="card-link">
+                <img src="{% static 'universeunveiled/snova.png' %}" class="card-img-top" alt="picture of a supernova">
+                <div class="card-body">
+                    <p class="card-text">Why massive stars die in a violent explosion.</p>
+                </div>
+                </a> 
+            </div>
+          
+        
+            <div class="card mx-auto">
+                <a class="card-link" href="{% url 'post_view' post_id=17962667813366781 %}">
+                <img src="{% static 'universeunveiled/blackhole.png' %}" class="card-img-top" alt="illustration of a black hole">
+                <div class="card-body">
+                    <p class="card-text">How black holes are formed and how they work.</p>
+                </div>
+                 </a>
+            </div>
+        </div>
+
+        <br>
+        <h2 class="center">From Planets to Galaxies:</h5>
+        <br>
+
+        <div class="deck">
+            <a href="{% url 'post_view' post_id=17932632461636255 %}" class="card-link">
+            <div class="card mx-auto">
+                <img src="{% static 'universeunveiled/exo.png' %}" class="card-img-top" alt="illustration of a exoplanet">
+                <div class="card-body">
+                    <p class="card-text">Two different methods used to find exoplanets.</p>
+                </div>
+            </a>
+            </div>
+        
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=17964739235014484 %}" class="card-link">
+                <img src="{% static 'universeunveiled/nebula.png' %}" class="card-img-top" alt="picture of a nebula">
+                <div class="card-body">
+                    <p class="card-text">What nebulae are and how they are formed.</p>
+                </div>
+                </a>
+            </div>
+
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=18052176001387435 %}" class="card-link">
+                <img src="{% static 'universeunveiled/galaxy.png' %}" class="card-img-top" alt="picture of galaxies">
+                <div class="card-body">
+                    <p class="card-text">The different types of galaxies in the universe.</p>
+                </div>
+                </a>
+            </div>
+        </div>
+
+        <br>
+        <h2 class="center">And a lot more:</h5>
+        <br>
+
+        <div class="deck">
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=17985622660771551 %}" class="card-link">
+                <img src="{% static 'universeunveiled/emlight.png' %}" class="card-img-top" alt="illustration of the electromagnetic spectrum">
+                <div class="card-body">
+                    <p class="card-text">All the different kinds of light and how they are used.</p>
+                </div>
+                </a>
+            </div>
+        
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=18345739543003893 %}" class="card-link">
+                <img src="{% static 'universeunveiled/spectro.png' %}" class="card-img-top" alt="illustration of a prism">
+                <div class="card-body">
+                    <p class="card-text">The discovery that unlocked the universe.</p>
+                </div>
+                </a>
+            </div>
+
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=17960163164686281 %}" class="card-link">
+                <img src="{% static 'universeunveiled/sunset.png' %}" class="card-img-top" alt="picture of a sunset">
+                <div class="card-body">
+                    <p class="card-text">Answering the question that everybody has asked.</p>
+                </div>
+                </a>
+            </div>
+        </div>
+
+    <h1 class="center title-type">Discovery Of</h1>
+    <h5 class="center"><em>Posts that explains the interesting ways things were discovered in the past.</em></h5>
+    <br><br>
+    <div class="deck half-deck">
+        <div class="card mx-auto">
+            <a href="{% url 'post_view' post_id=18031810975785010 %}" class="card-link">
+            <img src="{% static 'universeunveiled/do1.png' %}" class="card-img-top" alt="picture of William Herschel">
+            <div class="card-body">
+                <p class="card-text">How William Herschel in the 1800's discovered <em>"light unfit for vision."</em></p>
+            </div>
+            </a>
+        </div>
+    
+        <div class="card mx-auto">
+            <a href="{% url 'post_view' post_id=17999378086787028 %}" class="card-link">
+            <img src="{% static 'universeunveiled/do2.png' %}" class="card-img-top" alt="Picture of Ole Römer">
+            <div class="card-body">
+                <p class="card-text">How Ole Römer in 1676 was the first to measure the speed of light.</p>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    <br><br>
+    <h1 class="center title-type" >Everyday Science</h1>
+    <h5 class="center"><em>Short posts that shows how science is involved in our daily lives.</em></h5>
+    <br><br>
+        <div class="deck half-deck">
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=18452894014053538 %}" class="card-link">
+                <img src="{% static 'universeunveiled/micro.png' %}" class="card-img-top" alt="picture of a microwave">
+                <div class="card-body">
+                    <p class="card-text">How the microwave works and the science behind it.</p>
+                </div>
+                </a>
+            </div>
+        
+            <div class="card mx-auto">
+                <a href="{% url 'post_view' post_id=18059801689744179 %}" class="card-link">
+                <img src="{% static 'universeunveiled/laundry.png' %}" class="card-img-top" alt="picture of laundry detergent">
+                <div class="card-body">
+                    <p class="card-text">The interesting chemistry behind laundry detergent.</p>
+                </div>
+                </a>
+            </div>
+        </div>
+<br>
+        
+     
+</h5>
+<br>
+
+<h1>
+    Planet Playground
+</h1>
+<hr>
+ <h5>
+    Test the weight difference on the planets in our solar system.<br>
+    How much would you weigh on Mars?<br>
+    Choose between The Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus and Neptune (Pluto gets to join too).<br>
+    <br>
+
+    <div class="deck planet-deck">
+
+        <div class="card mx-auto">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gsfc-20171208-archive-e001982-orig.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" class="card-img-top" alt="picture of The Moon">
+            <div class="card-body center">
+                <p class="card-text">The Moon<hr></p>
+                <a href="{% url 'planet_view' planet='moon' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+
+
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pia15162-mercury-basins-messenger-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Mercury">
+            <div class="card-body center">
+                <p class="card-text">Mercury<hr></p>
+                <a href="{% url 'planet_view' planet='mercury' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+    
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/venus-mariner-10-pia23791-fig2-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Venus">
+            <div class="card-body center">
+                <p class="card-text">Venus<hr></p>
+                <a href="{% url 'planet_view' planet='venus' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="deck planet-deck">
+
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/mars-full-globe-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Mars">
+            <div class="card-body center">
+                <p class="card-text">Mars<hr></p>
+                <a href="{% url 'planet_view' planet='mars' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/jupiter-marble-pia22946-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Jupiter">
+            <div class="card-body center">
+                <p class="card-text">Jupiter<hr></p>
+                <a href="{% url 'planet_view' planet='jupiter' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+    
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2023/05/saturn-farewell-pia21345-sse-banner-1920x640-1.jpg?w=2048&format=webp" style="height: 49%;" class="card-img-top" alt="picture of Saturn">
+            <div class="card-body center">
+                <p class="card-text">Saturn<hr></p>
+                <a href="{% url 'planet_view' planet='saturn' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="deck planet-deck">
+
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/uranus-pia18182-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Uranus">
+            <div class="card-body center">
+                <p class="card-text">Uranus<hr></p>
+                <a href="{% url 'planet_view' planet='uranus' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pia01492-neptune-full-disk-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Neptune">
+            <div class="card-body center">
+                <p class="card-text">Neptune<hr></p>
+                <a href="{% url 'planet_view' planet='neptune' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+    
+        <div class="card mx-auto">
+            <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pluto-new-horizons-pia20291-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Pluto">
+            <div class="card-body center">
+                <p class="card-text">Pluto<hr></p>
+                <a href="{% url 'planet_view' planet='pluto' %}" class="btn btn-primary btn-explore">Explore &nbsp; <i class="fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+ </h5>
+{% endblock %}

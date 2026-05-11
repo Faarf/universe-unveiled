@@ -1,0 +1,672 @@
+body {
+    font-family: "Raleway", sans-serif;
+    overflow-x: hidden;
+}
+
+
+ /* Navbar */ 
+ 
+
+.navbar {
+    font-weight: bold;
+    padding:0.6%;
+    letter-spacing: 1.5px;
+}
+
+
+.navbar-nav {
+    display: flex;
+    gap: 2em;
+}
+
+.nav-link, .nav-item, .foot-link {
+    text-decoration: underline solid transparent;
+    color: white;
+    transition: 0.3s ease-in-out;
+    text-underline-offset: 7px;
+}
+
+
+.nav-link:hover,.nav-item:hover, .foot-link:hover {
+    text-decoration: underline solid white;
+    color: white;
+}
+
+ul.dropdown-menu.show {
+    background-color: rgb(43, 41, 41);
+}
+
+.dropdown-menu {
+    transform: translateX(-40%);
+    display: none;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+    color: white;
+    background-color: #343a40;
+    text-decoration: none;
+}
+
+.logo {
+    width: 80px; 
+    height: 66px;
+    border-radius:60%;
+    padding: 0%;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    padding: 2%;
+}
+
+
+/* Footer */
+
+
+#backButton {
+    position: absolute;
+    font-size: 18px;
+    cursor: pointer;
+    transform: translateX(-50%);
+    left: 50%;
+    background-color: #181a1d;
+    border-color:indigo;
+}
+
+#backButton:hover {
+    background-color: #24282b;
+    border-color:rgb(118, 41, 173);
+}
+
+#footer a {
+    color: white;
+}
+
+#footer {
+    background-color: #212529;
+    color: white;
+    padding: 1.5em;
+    position : static;
+    bottom : 0;
+    width: 100%;
+
+}
+
+
+/* Main Text (Picture) */ 
+ 
+
+.picture {
+    position: relative;
+    display: inline-block;
+      
+}
+
+.pic {
+    position: relative;
+    display: inline-block;
+    width: 1920px;
+    height: 689px;
+    
+    filter: brightness(80%)
+}
+
+.overlay, .overlay-planets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+
+.overlay .display-1 {
+    color: white;
+    margin-left: 5%;
+    font-size: 60px;
+    
+}
+
+.overlay-planets {
+    text-align: center;
+    color:white;
+    overflow:hidden;
+}
+
+.overlay-planets .display-1 {
+    font-size: 60px;
+    display: inline-block;
+}
+
+.overlay-planets .text {
+    display: inline;
+    margin-bottom: 10%;
+    order: -1;
+}
+
+.overlay-planets p a {
+    margin-right: 1%;
+    color:gray
+}
+
+.overlay-planets .display-4 {
+    color: white;
+    font-size: 23px;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+.overlay .display-4 {
+    color: white;
+    margin-left: 5.5%; 
+    font-size: 23px;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+.planet-pic {
+    object-fit: cover;
+    height: 100%;
+}
+
+div.text {
+    padding: 2em;
+    background: rgb(12,2,77);
+    background: linear-gradient(135deg, rgba(12,2,77,0.6250875350140056) 0%, rgba(0,0,0,0.06486344537815125) 100%);
+}
+
+.overlay p {
+    font-size: 12px;
+    color: rgb(117, 93, 93);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.playground {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 0;
+}
+
+.playground * {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.list-group, .list-group-item {
+    background-color: rgb(17, 2, 44);
+}
+
+
+/* Body */
+
+#content {
+    padding: 2em;
+    background-color: #17191b;
+    color: white;
+}
+
+hr {
+    background-color:rgba(123, 109, 212, 0.671);
+    height: 2px;
+    border-radius: 50%;
+}
+
+h5 {
+    margin-left: 3%;
+    line-height: 1.5;
+}
+
+.title-type {
+    font-size: 70px;
+}
+
+.paragraph {
+   display: flex; 
+   flex-direction: column;
+   gap: 3em;
+   width: 50%; 
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.about-icon {
+    max-width: 96px;
+    font-size: 6em;
+    width: auto;
+}
+
+
+.deck {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+    gap: 2em;
+    margin: 2em 10% 2em 10%;
+}
+
+.half-deck {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.post_deck {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post_title {
+    display: inline-block;
+    overflow: hidden;
+    max-height: 12ch;
+    max-width: 100%;
+    text-align: left;
+  }
+
+.card {
+    position: relative;
+    display: inline-block;
+    border-radius: 3%;
+    padding: 1em;
+    width: 18rem;
+    background-color: rgb(17, 2, 44);
+    color: white;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.301), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    transition: 0.2s ease-in-out;
+}
+
+.post_card {
+    width: 23rem; 
+    margin: 1%;
+    margin-top: 5%;
+}
+
+.card-img-top-planets {
+    width: 254px;
+    height: 143px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    text-align: left;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    background-color:rgb(41, 2, 73); 
+}
+
+.card-link {
+    color: white;
+}
+
+.card-link:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.output {
+    flex-basis: 30%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: rgba(17, 2, 44, 0.425);
+    height: 450px;
+}
+
+.output:hover, .planet-card:hover, .mb-3:hover {
+    transform: scale(1.00);
+}
+.output-body {
+    background-color: rgba(41, 2, 73, 0.425);
+}
+
+.output-text {
+    text-align: center;
+    margin-top: 17%;
+    text-shadow:rgba(0, 0, 0, 0.507) 0 4px 10px, rgba(0, 0, 0, 0.39) 0 6px 20px;
+}
+
+.output-title {
+    text-shadow:rgba(0, 0, 0, 0.507) 0 4px 10px, rgba(0, 0, 0, 0.39) 0 6px 20px;
+}
+
+.planet-card {
+    margin-left: 5%;
+    flex-basis: 20%;
+    flex-shrink: 0;
+    
+}
+
+.card.mb-3 {
+    height: 450px;
+    margin-right: 5%;
+    flex-basis: 20%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.btn-explore {
+    background-color:#af6d0b;
+    border-color: wheat;
+    margin-bottom: 3%;
+}
+
+.btn-explore:hover {
+    background-color: #ee9105;
+    border-color: wheat
+}
+
+.btn-explore:active {
+    background-color: #ee9105;
+    border-color: wheat
+}
+
+
+.center {
+    text-align: center;
+    margin-left: 0%;
+}
+
+#carouselExampleIndicators {
+    position: absolute;
+    top: 0;
+    margin-top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid 20px;
+    border-color: rgba(25, 5, 63, 0.562);
+    border-radius: 3%;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.301), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+}
+
+.carousel-inner {
+    width: 55ch;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    top: 50%;
+    bottom: auto;
+    width:0%;
+    color: white;
+    border: none;
+    background-color:transparent;
+
+}
+
+.carousel-item {
+    display:block;
+}
+
+.carousel-item {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+
+ .carousel-item:not(.active) {
+    opacity: 0;
+  }
+
+
+.fa-chevron-up {
+    font-size: 5ch;
+    position: relative;
+}
+
+.carousel-indicators {
+    justify-content: space-between;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 2%;
+}
+
+.carousel-indicators button {
+    background-color: #f3f3f3c4;
+    border: solid 2px;
+    border-radius: 3%;
+    border-color: rgb(30, 4, 124);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.301), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+}
+
+.view-text {
+    font-size: 20px;
+    width:50%; 
+    margin: auto;
+    line-height: 1.5;
+}
+
+.form-group {
+    width: 60%;
+}
+
+#author, #comment {
+    padding: 1.5%;
+    border: solid 1ch;
+    border-color:rgb(41, 2, 73);
+}
+
+#author {
+    width: 20%;
+}
+
+.comments {
+    width: 60%;
+    padding: 1%;
+    margin-left: 5%;
+    background-color:rgb(41, 2, 73);
+    border: solid 2ch;
+    border-color: rgb(17, 2, 44);
+    border-radius: 2%;
+    margin-top: 2%;
+}
+
+.comment-text {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 7%;
+}
+
+.timestamp {
+    color: gray;
+    margin-left: 3%;
+}
+
+@media screen and (max-width: 700px) {
+ 
+    nav.navbar.bg-dark.border-body.justify-content-between {
+        background: rgb(12,2,77);
+        background: radial-gradient(circle, rgba(12,2,77,0.7595413165266106) 0%, rgba(32,30,30,0.8575805322128851) 100%);
+    }
+
+    .navbar {
+        padding: 3%;
+        margin-bottom: auto;
+        line-height: 0;
+        gap: 1em;
+    }
+
+    .navbar-nav .dropdown-menu {
+        margin-top: 1.5em;
+        transform: translateX(-55%);
+        position: absolute;
+    }
+
+    .dropdown-item {
+        margin-top: 4%;
+        margin-bottom: 10%;
+    }
+
+    .overlay .display-1, .overlay-planets .display-1 {
+        font-size: 2em;
+    }
+
+    .overlay .display-4, .overlay-planets .display-4 {
+        font-size: 0.8em;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .pic {
+       height: 17em;
+    }
+
+    .deck {
+        display: inline-block;
+        margin: 2em 10% 2em 8%;
+    }
+
+    .half-deck {
+        margin: 2em 10% 2em 8%;
+    }
+
+    .planet-deck {
+        margin-left: 4%;
+        margin-top:0;
+        margin-bottom: 0;
+    }
+
+    .play-deck {
+        margin-left: 6%;
+        margin-top:0;
+        margin-bottom: 0;
+    }
+
+    .card {
+        margin-bottom: 4%;
+        margin-top: 4%;
+    }
+
+    .post_card {    
+        width: 80%; 
+        margin-bottom: 5%;
+        padding: 0.8em;
+        margin-left: 5%;
+    }
+
+    .post_title {
+        font-size: small;
+    }
+
+    .post_deck {
+        display:inline-block;
+        gap: 1em;
+        margin: 1em 5% 1em 5%;
+    }
+    
+    #backButton {
+        position: relative;
+        display:block;
+        margin-bottom: 4%;
+    }
+
+    .paragraph {
+        width: 100%;
+    }
+
+    .post-pic {
+        height: 23em;
+    }
+
+    .carousel-inner {
+        width: 30ch;
+    }
+
+    .carousel-indicators {
+        margin-left: 23%;
+    }
+
+    .view-text {
+        width: 100%;
+    }
+
+    #author {
+        width: 70%;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+    
+    .comments {
+        width: 100%;
+    }
+
+    .planet-pic {
+        height: 50em;
+        object-fit: cover;
+    }
+
+    .overlay-planets {
+        overflow: visible;
+    }
+
+    .playground * {
+        max-height:none;
+    }
+    
+    .playground {    
+        height: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40% 40%;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+      }
+
+      
+      .playground .planet-card {
+        grid-column: 1;
+        grid-row: 1;
+        margin-left: 30%;
+      }
+      
+      .playground .play-card {
+        grid-column: 2;
+        grid-row: 1;
+        margin-right: 30%;
+      }
+      
+      .playground .output {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        text-align: center;
+        height: 30ch;
+        width: 50ch;
+        margin-top: 25%;
+      }
+
+    .planet-card, .output, .play-card {
+        display: inline-block;
+        scale: 0.5;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .output {
+        margin-left: 3%;
+    }
+
+
+ }

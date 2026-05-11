@@ -1,0 +1,344 @@
+{% extends "universeunveiled/layout.html" %}
+
+{% load static %}
+
+
+{% block title %}
+    Planet Playground - Universe Unveiled
+{% endblock %}
+
+{% block picture %} 
+
+<img class="pic img-fluid planet-pic" src="{% static 'universeunveiled/system.jpg' %}" alt="illustration of the solar system">
+<div class="overlay-planets">
+    <div class="text">
+        <h1 class="display-1">Planet Playground</h1>
+        <h4 class="display-4">Explore the solar system</h4>
+    </div>
+    
+
+    <div class="playground">
+
+        <div class="card planet-card" id="default">
+            <img src="{% static 'universeunveiled/uulogo.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title center">Choose a planet</h5>
+              <hr></hr>
+              <p class="card-text">Your selected planet will appear here along with some general facts about it.</p>
+            
+            </div>
+        </div>
+
+<!-- If this template is rendered with a planet in the url-->
+{% if planet %}
+    <p id="planet" data-planet="{{ planet }}" style="display: none"></p>
+{% endif %}
+
+        <!-- The following cards are hidden until the user selects a planet -->
+
+                <div class="card planet-card" id="moon" style="display: none; background-color: rgb(82, 77, 77)">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/gsfc-20171208-archive-e001982-orig.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" class="card-img-top center" alt="picture of the moon">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">The Moon<hr style="background-color: rgb(82, 77, 77)"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance from the Earth: 384,400 km</strong><br>
+                            <strong>Diameter: 3474 km</strong><br>
+                            The moon makes one rotation around the earth every 27.3 days.<br>
+                            It is tidaly locked to the earth, which is why we only see one side of it at all times.<br>
+                            The moon has a lot of visible craters because unlike Earth, it has no geological activity.<br>
+                            The moon has no atmosphere.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card planet-card" id="mercury" style="display: none; background-color:gray">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pia15162-mercury-basins-messenger-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Mercury">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Mercury<hr style="background-color: gray"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 58 million km</strong><br>
+                            <strong>Diameter: 4879 km</strong><br>
+                            A year on Mercury is 88 Earth days, the shortest year out of any planet.<br>
+                            A day though on Mercury is 176 Earth days, meaning it takes two years for one day to pass.<br>
+                            The average surface temperature is 167 degrees Celsius, the second hottest before Venus.<br>
+                            Mercury has no moons or atmosphere.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card planet-card" id="venus" style="display: none; background-color:antiquewhite">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2024/03/venus-mariner-10-pia23791-fig2-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Venus">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Venus<hr style="background-color:antiquewhite"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 108 million km</strong><br>
+                            <strong>Diameter: 12,104 km</strong><br>
+                            A year on Venus is 225 Earths days.<br>
+                            A day on Venus is 243 Earth days, so its day is longer than its year.<br>
+                            Venus is the hottest planet in the solar system with an average surface temperature of 464 degrees Celsius.<br>
+                            The atmopsheric pressure is 92 times more than on Earth.<br>
+                            It is assumed that Venus once harbored a lot of oceans, but over time as the Sun has grown in strength,
+                            the oceans have evaporated, leaving a thick atmopshere trapping the heat from escaping.<br>
+                            Venus has no moons.
+                        </p>
+                    </div>
+                </div>
+                    
+                <div class="card planet-card" id="mars" style="display: none; background-color:brown">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2024/03/mars-full-globe-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Mars">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Mars<hr style="background-color: brown"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 228 million km</strong><br>
+                            <strong>Diameter: 6792 km</strong><br>
+                            A year on Mars is 687 Earth days, almost double an Earth year.<br>
+                            A day is 24.7 hours long, just slighly longer than an Earth day.<br>
+                            A Mars day is known as one "Sol".<br>
+                            Summers on Mars can get up to 20 degrees celcius, but winters can drop as low as below -120 degrees Celsius.<br>
+                            Mars has an atmopshere but its over 100 times thinner than Earth's.<br>
+                            Mars has two moons, Phobos and Deimos.                    
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card planet-card" id="jupiter" style="display: none; background-color:rgb(184, 142, 79)">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2024/03/jupiter-marble-pia22946-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Jupiter">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Jupiter<hr style="background-color: rgb(184, 142, 79);"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 779 million km</strong><br>
+                            <strong>Diameter: 142,984 km</strong><br>
+                            A year on Jupiter is 11.8 Earth years.<br>
+                            A day on Jupiter is the shortest in the solar system, only 9.9 hours long.<br>
+                            This fast rotation is what causes the enormous storms all throughout the planet.<br>
+                            Jupiter is a gas giant mostly made out of hydrogen and helium.<br>
+                            Jupiter has 95 moons. Its four largest moons, Io, Europa, Ganymede, and Callisto are known as the Gallilean moons.<br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card planet-card" id="saturn" style="display: none; background-color:rgb(172, 151, 120)">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2023/05/saturn-farewell-pia21345-sse-banner-1920x640-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Saturn">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Saturn<hr style="background-color: rgb(172, 151, 120);"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 1.4 billion km</strong><br>
+                            <strong>Diameter: 120,536 km</strong><br>
+                            A year on Saturn is 29 Earth years.<br>
+                            A day on Saturn is the second shortest in the solar system, only 10.7 hours long.<br>
+                            Saturn's rings are generally 10 meters thick and are made out of ice and rock.<br>
+                            Saturn has the most amount of moons in the solar system, a whopping 146 moons. <br>
+                            Saturn's largest moon Titan, is the second largest in the solar system. <br>
+                            Titan even has an atmosphere denser than Earth's and is bigger than Mercury.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card planet-card" id="uranus" style="display: none; background-color:lightblue">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2024/03/uranus-pia18182-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Uranus">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Uranus<hr style="background-color: lightblue;"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 2.9 billion km</strong><br>
+                            <strong>Diameter: 51,118 km</strong><br>
+                            A year on Uranus is 84 Earth years.<br>
+                            A day on Uranus is 17.2 hours long.<br>
+                            Uranus is one of two ice giants in the solar system.<br>
+                            Uranus have rings, but they are very faint.<br>
+                            Uranus has 28 moons.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card planet-card" id="neptune" style="display: none; background-color: rgb(39, 73, 221)">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pia01492-neptune-full-disk-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Neptune">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Neptune<hr style="background-color: rgb(39, 73, 221);"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 4.5 billion km</strong><br>
+                            <strong>Diameter: 49,528 km</strong><br>
+                            A year on Neptune is 164 Earth years.<br>
+                            A day on Neptune is 16.1 hours long.<br>
+                            Neptune is one of two ice giants in the solar system.<br>
+                            Neptune has rings but they are very faint.<br>
+                            Neptune has 16 moons.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card planet-card" id="pluto" style="display: none; background-color: rgb(201, 181, 157)">
+                    <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pluto-new-horizons-pia20291-16x9-1.jpg?w=2048&format=webp" class="card-img-top" alt="picture of Pluto">
+                    <div class="card-body center" style="background-color:black;">
+                        <h5 class="card-title">Pluto<hr style="background-color: rgb(201, 181, 157);"></h5>
+                
+                        <p class="card-text" style="text-align: left;"><strong>Distance (Sun): 5.9 billion km</strong><br>
+                            <strong>Diameter: 2376 km</strong><br>
+                            A year on Pluto is 248 Earth years.<br>
+                            A day on Pluto is 6 Earth days.<br>
+                            The average temperature on Pluto is -232 degrees Celsius.<br>
+                            There are seven moons in the solar system larger than Pluto, including our own moon.<br>
+                            Its located in the Kuiper Belt along with a lot of other icy bodies.<br>
+                            Pluto is a dwarf planet.<br>
+                            Pluto has 5 moons.
+                        </p>
+                    </div>
+                </div>
+
+
+        <!-- Back to the normal cards -->
+
+
+        <div class="card output">
+            <div class="card-body output-body">
+              <h1 class="card-title center output-title">You would weigh:</h1>
+            </div>
+            <h1 class="card-text output-text" data-value="" style="font-size: 60px;"></h1>
+        </div>
+
+
+          <div class="card mb-3 play-card">
+            <div class="card-body play">
+              <h5 class="card-title center">Playground</h5>
+              <hr class="card-hr">
+              <p class="card-text">Select a unit and enter a weight here on Earth.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> 
+                 <form id="play-form">
+                    <div class="mb-3">
+                        <label for="weight" class="form-label">Weight:</label>
+                        <input type="number" style="margin-bottom:3%;"class="form-control" id="weight" aria-describedby="weight" required name="weight" min="0">
+
+                        <label for="unit" class="form-label">Unit:</label>
+                        <input type="radio" class="btn-check" name="unit" id="kg" autocomplete="off" checked>
+                        <label  for="kg">kg</label>
+                        <input type="radio" class="btn-check" name="unit" id="lbs" autocomplete="off">
+                        <label  for="lbs">lbs</label>    
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-explore">Submit</button>
+                    </div>
+                  </form>
+                </li> 
+                <li class="list-group-item">
+                    <p id="gravity" data-gravity="0"> Gravity: <em>None</em></p>
+                </li>
+               </ul>
+            </div>
+
+    </div>
+    <p style="text-align: right; margin-top:auto;"><a class="foot-link" target="_blank" href="http://www.freepik.com">Designed by brgfx / Freepik</a></p>
+</div>
+
+{% endblock %}
+
+
+{% block main %}
+
+<h1>
+    Choose a planet
+</h1>
+<hr>
+<h5>
+    Here you can test different things about the planets (and our moon) in the solar system.<br>
+    Choose a planet, enter a weight on Earth and see what it would weigh on that planet.<br>
+    <br>
+    
+</h5>
+
+<div class="deck play-deck">
+
+    <div class="card mx-auto" style="background-color: rgb(82, 77, 77)">
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/gsfc-20171208-archive-e001982-orig.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" style="object-fit: cover;" class="card-img-top-planets center" alt="picture of the moon">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">The Moon<hr style="background-color: rgb(82, 77, 77)"></p>
+            <button data-id="moon" data-gravity="0.16" data-color="rgb(82, 77, 77)" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+    
+            <p class="card-text"><em>0.16x Gravity</em></p>
+        </div>
+    </div>
+
+    <div class="card mx-auto" style="background-color: gray">
+        <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pia15162-mercury-basins-messenger-16x9-1.jpg?w=2048&format=webp" class="card-img-top-planets" alt="picture of Mercury">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Mercury<hr style="background-color: gray"></p>
+            <button data-id="mercury" data-gravity="0.38" data-color="gray" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>0.38x Gravity</em></p>
+        </div>
+    </div>
+
+    <div class="card mx-auto" style="background-color: antiquewhite;">
+        <img src="https://science.nasa.gov/wp-content/uploads/2024/03/venus-mariner-10-pia23791-fig2-16x9-1.jpg?w=2048&format=webp" class="card-img-top-planets" alt="picture of Venus">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Venus<hr style="background-color: antiquewhite;"></p>
+            <button data-id="venus" data-gravity="0.9" data-color="antiquewhite" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>0.9x Gravity</em></p>
+        </div>
+    </div>
+
+   
+</div>
+
+<div class="deck play-deck">
+
+    <div class="card mx-auto" style="background-color: brown">
+        <img src="https://science.nasa.gov/wp-content/uploads/2024/03/mars-full-globe-16x9-1.jpg?w=2048&format=webp" class="card-img-top-planets" alt="picture of Mars">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Mars<hr style="background-color: brown"></p>
+            <button data-id="mars" data-gravity="0.38" data-color="brown" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>0.38x Gravity</em></p>
+        </div>
+    </div>
+
+    <div class="card mx-auto" style="background-color: rgb(184, 142, 79);">
+        <img src="https://science.nasa.gov/wp-content/uploads/2024/03/jupiter-marble-pia22946-16x9-1.jpg?w=2048&format=webp" class="card-img-top-planets" alt="picture of Jupiter">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Jupiter<hr style="background-color: rgb(184, 142, 79);"></p>
+            <button data-id="jupiter" data-gravity="2.6" data-color="rgb(184, 142, 79)" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>2.6x Gravity</em></p>
+        </div>
+    </div>
+
+    <div class="card mx-auto" style="background-color: rgb(172, 151, 120);">
+        <img src="https://science.nasa.gov/wp-content/uploads/2023/05/saturn-farewell-pia21345-sse-banner-1920x640-1.jpg?w=2048&format=webp" style="height: 49%;" class="card-img-top-planets" alt="picture of Saturn">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Saturn<hr style="background-color: rgb(172, 151, 120);"></p>
+            <button data-id="saturn" data-gravity="1.1" data-color="rgb(172, 151, 120)" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>1.1x Gravity</em></p>
+        </div>
+    </div>
+
+   
+</div>
+
+<div class="deck play-deck">
+
+    <div class="card mx-auto" style="background-color:lightblue;">
+        <img src="https://science.nasa.gov/wp-content/uploads/2024/03/uranus-pia18182-16x9-1.jpg?w=2048&format=webp" class="card-img-top-planets" alt="picture of Uranus">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Uranus<hr style="background-color:lightblue;"></p>
+            <button data-id="uranus" data-gravity="0.92" data-color="lightblue" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>0.92x Gravity</em></p>
+        </div>
+    </div>
+
+    <div class="card mx-auto" style="background-color: rgb(39, 73, 221);">
+        <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pia01492-neptune-full-disk-16x9-1.jpg?w=2048&format=webp" class="card-img-top-planets" alt="picture of Neptune">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Neptune<hr style="background-color: rgb(39, 73, 221);"></p>
+            <button data-id="neptune" data-gravity="1.15" data-color="rgb(39, 73, 221)" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>1.15x Gravity</em></p>
+        </div>
+    </div>
+
+    <div class="card mx-auto" style="background-color: rgb(201, 181, 157);">
+        <img src="https://science.nasa.gov/wp-content/uploads/2024/03/pluto-new-horizons-pia20291-16x9-1.jpg?w=2048&format=webp" class="card-img-top-planets" alt="picture of Pluto">
+        <div class="card-body center" style="background-color:black;">
+            <p class="card-text">Pluto<hr style="background-color: rgb(201, 181, 157);"></p>
+            <button data-id="pluto" data-gravity="0.06" data-color="rgb(201, 181, 157)" class="btn btn-primary btn-explore select">Select &nbsp; <i class="fa-solid fa-rocket"></i></button>
+            <p class="card-text"><em>0.06x Gravity</em></p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

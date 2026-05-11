@@ -1,0 +1,52 @@
+{% extends "universeunveiled/layout.html" %}
+
+{% load static %}
+
+
+{% block title %}
+   Posts - Universe Unveiled
+{% endblock %}
+
+{% block picture %} 
+
+<img class="pic img-fluid" src="https://stsci-opo.org/STScI-01G7JHXCJM6395GGYDPW3HTXXG.png" alt="james webb deep field picture">
+<div class="overlay">
+<br>
+<div class="text">
+    <h1 class="display-1">Posts</h1>
+    <h4 class="display-4">All you need to know</h4>
+</div>
+    <p style="text-align: right;">James Webb Deep Field, Credits: NASA, ESA, CSA, STScI</p>
+</div>
+
+{% endblock %}
+
+
+{% block main %}
+<h1>
+    Latest posts
+</h1>
+<hr>
+
+<div class="post_deck">
+
+    {% for media in all_media %}
+    <a href="{% url 'post_view' post_id=media.id %}">
+        <div class="card post_card">
+            <img src="{{ media.media_url }}" class="card-img-top" alt="...">
+            <div class="card-body center">
+                <h5 class="card-title post_title">{{ media.caption }}</h5>
+                <h5 class="card-text">...</h5>
+            </div>
+        </div>
+    </a>
+
+    {% endfor %}
+
+</div>
+
+<div class="loader" style="display:none; text-align: center;">
+    <h5>Loading...</h5>
+</div>
+
+{% endblock %}
